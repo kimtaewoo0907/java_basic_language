@@ -158,8 +158,8 @@ public class LoopStatement {
 //        int[] arr1 = {100,40,20,60,80,30};
 //        int total=0;
 //        double avr = 0;
-//        int max = arr1[0];
-//        int min = arr1[0];
+//        int max = 0;
+//        int min = 0;
 //
 //        int total2 = Arrays.stream(arr1).sum();
 //        double avr2 = Arrays.stream(arr1).average().getAsDouble();
@@ -175,7 +175,7 @@ public class LoopStatement {
 //        avr = (double)total/arr1.length;
 //        System.out.println(avr);
 //
-//        for(int j=0; j<arr1.length; j++) {
+//        for(int j=0; j<arr1.length-1; j++) {
 //
 //            if(max<arr1[j])max = arr1[j];
 //            if(min>arr1[j])min = arr1[j];
@@ -221,35 +221,102 @@ public class LoopStatement {
 
         //배열의 자리 바꿈
 
-        int[] arr = {10, 20, 30, 40, 50};
-//             System.out.println(Arrays.toString(arr));
+//        int[] arr = {10, 20, 30, 40, 50};
+////             System.out.println(Arrays.toString(arr));
+//
+//        for (int i = 0; i < arr.length - 1; i++) {
+//            int temp = arr[i];
+//            arr[i] = arr[i + 1];
+//            arr[i + 1] = temp;
+//        }
+//        System.out.println(Arrays.toString(arr));
+////         if(arr[i]<arr[i+1])
+////         2중 포문 + 뒷 자리가 차면 그 횟수만큼 줄어들어야 하는 것도 감안
 
-        for (int i = 0; i < arr.length - 1; i++) {
-            int temp = arr[i];
-            arr[i] = arr[i + 1];
-            arr[i + 1] = temp;
-        }
-        System.out.println(Arrays.toString(arr));
-//         if(arr[i]<arr[i+1])
-//         2중 포문 + 뒷 자리가 차면 그 횟수만큼 줄어들어야 하는 것도 감안
-//         bubble sort
-        int[] arr2 = {50, 60, 40, 70, 10, 20};
-        for (int i = 0; i < arr2.length - 1; i++){
-            Boolean trueOrNot = true;
-            for (int j = 0; j < arr2.length - 1 - i; j++) {
-                if (arr2[j] > arr2[j + 1]) {
-                    int temp = arr2[j];
-                    arr2[j] = arr2[j + 1];
-                    arr2[j + 1] = temp;
-                    trueOrNot = false;
+////         bubble sort
+
+//        int[] arr2 = {50, 60, 40, 70, 10, 20};
+//
+//        // arr.length-1 : 전체 반복횟수
+//        // 세부 반복횟수 : 5+4+3+2+1
+//        for (int i = 0; i < arr2.length - 1; i++){
+//            Boolean trueOrNot = true;
+//            for (int j = 0; j < arr2.length - 1 - i; j++) {
+//                if (arr2[j] > arr2[j + 1]) {
+//                    int temp = arr2[j];
+//                    arr2[j] = arr2[j + 1];
+//                    arr2[j + 1] = temp;
+//                    trueOrNot = false;
+//                }
+//            }
+//            if (trueOrNot == true) {
+//                break;
+//            }
+//        }
+//        System.out.println(Arrays.toString(arr2));
+
+//        selection sort
+
+//            int[] arr = {30, 60, 20, 50, 10, 40};
+//
+//            for(int i=0; i<arr.length-1; i++) {
+//                for(int j=i+1; j<arr.length; j++){
+//                    if(arr[i]>arr[j]) {
+//                        int temp = arr[i];
+//                        arr[i] = arr[j];
+//                        arr[j] = temp;
+//                    }
+//                }
+//            }
+//            System.out.println(Arrays.toString(arr));
+
+            // continue, break 문
+            // 1~100 중에서 5의 약수 또는 7의 약수를 제외한 값을 출력
+//            int num=1;
+//            while(num < 101) {
+//                if(num%5 == 0 || num%7 == 0 ) {
+//            // 반복문 내에서 조건문 검사로 다시 올라가도록 하는 구문
+//            // 아래와 같이 coding할 경우 무한루프에 빠지게 된다
+//                    continue;
+//                } else {
+//                    System.out.println(num);
+//                }
+//                num ++;
+//            }
+
+//            for (int i=1; i<101; i++) {
+//                if(i%5 == 0 || i % 7 ==0){
+//                } else {
+//                    System.out.println(i);
+//                }
+//                // 추가적인 구문이 더 있을 경우에 해당 구문을 실행시킬 필요가 없을 때 continue;
+//                System.out.println("hi");
+//            }
+
+            // break문은 중도에 반복문을 강제 종료 시키는 것
+            int num = 1;
+            while(true){
+                if(num%5 == 0 || num%7 ==0){
+                } else {
+                    System.out.println(num);
+                }
+                num ++;
+                if (num==101) {
+                    break;
                 }
             }
-            if (trueOrNot == true) {
-                break;
-            }
-        }
-        System.out.println(Arrays.toString(arr2));
 
+            Label1:
+            for(int i=0; i<5; i++){
+                System.out.println("first for문" + i);
+                Label2:
+                for(int j=0; j<5; j++){
+                    System.out.println("second for문" + j);
+                    if(j==1) {
+                        break Label1;
+                    }
+                }
+            }
 
     }
 }
