@@ -1,3 +1,5 @@
+package java_basic_grammer;
+
 public class CodingTest {
     public static void main(String[] args) {
         int num1=11;

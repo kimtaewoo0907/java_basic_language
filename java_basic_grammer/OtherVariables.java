@@ -1,4 +1,5 @@
-import java.lang.reflect.Array;
+package java_basic_grammer;
+
 import java.util.*;
 
 public class OtherVariables {

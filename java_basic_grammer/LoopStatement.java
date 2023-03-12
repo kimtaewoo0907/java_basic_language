@@ -1,6 +1,4 @@
-import java.awt.desktop.SystemEventListener;
-import java.util.Arrays;
-import java.util.Scanner;
+package java_basic_grammer;
 
 public class LoopStatement {
     public static void main(String[] args) {

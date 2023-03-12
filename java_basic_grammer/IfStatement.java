@@ -1,3 +1,5 @@
+package java_basic_grammer;
+
 import java.util.Scanner;
 public class IfStatement {
     public static void main(String[] args) {

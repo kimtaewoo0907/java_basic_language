@@ -1,6 +1,4 @@
-import java.math.BigDecimal;
-import java.sql.SQLOutput;
-import java.util.Scanner;
+package java_basic_grammer;
 
 //자바 변수 기초에 대한 클래스입니다.
 public class Variables {
